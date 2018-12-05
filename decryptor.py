@@ -1,6 +1,6 @@
 import encryptor
 
-
+# English letters frequency
 frequencies = {
     "a": 0.0817,
     "b": 0.0149,
@@ -58,7 +58,6 @@ def analysis(text):
     for i in range(1, len(encryptor.alphabet)):
         keys[i] = frequency_analysis(text, -i)
     sorted_keys = sorted(keys.items(), key=lambda kv: kv[1])
-    print(sorted_keys)
     return sorted_keys[0][0]
 
 

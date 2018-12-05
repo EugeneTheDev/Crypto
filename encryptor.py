@@ -10,6 +10,7 @@ alphabet = list(ascii_letters + digits) + [".", ",", "!", "?", ";", "-", ":", "_
 
 
 class Dictionary:
+    """Dictionary class for getting symbol by specified key"""
 
     def __init__(self, key):
         self.key = key
@@ -47,9 +48,9 @@ def crypt(text, key):
 
 
 def encrypt(key):
-    print(key)
     encrypted_text = crypt(read_file(text_url), key)
     write_file(cipher_url, encrypted_text)
+    print("Successfully encrypted")
 
 
 if __name__ == '__main__':
