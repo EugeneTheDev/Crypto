@@ -1,4 +1,4 @@
-import encryptor
+import src.encryptor as encryptor
 
 # English letters frequency
 frequencies = {

@@ -3,9 +3,9 @@
 from string import ascii_letters, digits
 from math import fmod
 
-text_url = "data/text.txt"
-cipher_url = "data/cipher.txt"
-open_text_url = "data/open_text.txt"
+text_url = "../data/text.txt"
+cipher_url = "../data/cipher.txt"
+open_text_url = "../data/open_text.txt"
 alphabet = list(ascii_letters + digits) + [".", ",", "!", "?", ";", "-", ":", "_"]
 
 
@@ -54,5 +54,4 @@ def encrypt(key):
 
 
 if __name__ == '__main__':
-    len(alphabet)
     encrypt(int(fmod(int(input("Input key: ")), len(alphabet))))
