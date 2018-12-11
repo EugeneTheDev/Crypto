@@ -37,20 +37,11 @@ def frequency_analysis(text, key):
     for letter in text:
         letter = letter.lower()
         if letter in frequencies and letter not in test_frequency:
-            test_frequency[letter] = calculate_frequency(text, letter)
+            test_frequency[letter] = text.count(letter)/len(text)
     delta = 0
     for key, value in test_frequency.items():
         delta += abs(frequencies[key] - value)
     return delta
-
-
-def calculate_frequency(text, letter):
-    total_number = letter_number = 0
-    for let in text:
-        total_number += 1
-        if let == letter:
-            letter_number += 1
-    return letter_number/total_number
 
 
 def analysis(text):
