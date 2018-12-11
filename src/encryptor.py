@@ -1,12 +1,12 @@
 """This module used both for encryption and decryption"""
 
-from string import ascii_letters, digits
+from string import ascii_lowercase, digits
 from math import fmod
 
 text_url = "../data/text.txt"
 cipher_url = "../data/cipher.txt"
 open_text_url = "../data/open_text.txt"
-alphabet = list(ascii_letters + digits) + [".", ",", "!", "?", ";", "-", ":", "_"]
+alphabet = list(ascii_lowercase + digits) + [".", ",", "!", "?", ";", "-", ":", "_"]
 
 
 class Dictionary:
@@ -16,11 +16,13 @@ class Dictionary:
         self.key = key
 
     def get_symbol(self, old):
+        is_upper = old.isupper()
+        old = old.lower()
         index = alphabet.index(old) + self.key
         if abs(index) < len(alphabet):
             return alphabet[index]
         elif index > 0:
-            return alphabet[index - len(alphabet)]
+            return alphabet[index - len(alphabet)] if not is_upper else alphabet[index - len(alphabet)].upper()
 
 
 def read_file(file):
